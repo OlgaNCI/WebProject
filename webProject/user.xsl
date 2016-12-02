@@ -4,43 +4,29 @@
 <xsl:template match="/">
 	<html>
 		<head>
-			<title>User Profile</title>
-			<link rel="stylesheet" href="project.css"/>
-			<!--<meta name="viewport" content="width=device-width, initial-scale=1"/>-->
-   		<link rel="stylesheet" href="css/bootstrap.min.css"/>
+			<meta charset="utf-8"/>
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+    	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these -->
+			<link href="bootstrap.min.css" rel="stylesheet"/>
 			<body>
 				<h1>Description</h1>
-				<table>
-					<tr>
-						<th>Name</th>
-						<th>e-mail address</th>
-						<th>Photo</th>
-					</tr>
-					<xsl:for-each select="/userpage/user">
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>e-mail address</th>
+							<th>Photo</th>
+						</tr>
+						<xsl:for-each select="/userpage/user">
 						<tr>
 							<td><xsl:value-of select="username"/></td>
 							<td><xsl:value-of select="email"/></td>
 							<td><img src="{profile/image}"/></td>
 						</tr>
-					</xsl:for-each>
-				</table>
-				<!--<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-  			<script src="js/bootstrap.js"></script>
-  			<script>$(function() {
-  							$('a[href*=#]:not([href=#])').click(function() {
-    						if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      					var target = $(this.hash);
-      					target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      					if (target.length) {
-        				$('html,body').animate({
-          			scrollTop: target.offset().top
-								}, 1000);
-        				return false;
-      							}
-    							}
-  							});
-							});
-				</script>-->
+						</xsl:for-each>
+					</table>
+				<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+				<script src="bootstrap.js"></script>
 			</body>
 		</head>
 	</html>
