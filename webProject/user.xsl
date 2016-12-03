@@ -9,8 +9,35 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1"/>
     	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these -->
 			<link href="bootstrap.min.css" rel="stylesheet"/>
+			<link href="style.css" rel="stylesheet"/>
+			
 			<body>
-				<h1>Description</h1>
+				
+				<div class="navbar-static-top navbar-inverse" id="home">
+					<div class="container">
+       			<div class="navbar-brand">
+	    			 BonVoyagers
+	  			 	</div>
+	   				<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+	  				 Menu
+	  				</button>
+	   	<div class="collapse navbar-collapse navHeaderCollapse">
+	      <ul class="nav navbar-nav navbar-right">
+		      <li><a href="#home">Home</a></li> 
+			  	<li><a href="#destinations">Destinations</a></li>
+			  	<li><a href="#profile">Profile</a></li> 
+			  	<li><a id="signup-button" href="#">Sign Up</a></li>
+					<li><a href="#login">Login</a></li>
+		  	</ul>
+	   </div>
+	 			</div>
+				</div>
+	<div class="jumbotron">
+     <div class="container">
+				
+				</div>
+	</div>
+					<h1>Description</h1>
 					<table>
 						<tr>
 							<th>Name</th>
@@ -25,8 +52,32 @@
 						</tr>
 						</xsl:for-each>
 					</table>
-				<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-				<script src="bootstrap.js"></script>
+				
+					<div id="signup" class="popover" role="tooltip" style="display: none">
+							<form role="form" action ="signup.php" method="post">
+									<div class="form-group">
+											<label for="username">Username:</label>
+											<input type="text" class="form-control" id="username" name="username"/>
+									</div>
+									<div class="form-group">
+											<label for="email">Email Address:</label>
+											<input type="email" class="form-control" id="email" name="email"/>
+									</div>
+									<div class="form-group">
+											<label for="password">Password:</label>
+											<input type="password" class="form-control" id="password" name="password"/>
+									</div>
+									<div class="form-group">
+											<label for="confPass">Confirm Password:</label>
+											<input type="password" class="form-control" id="confPass" name="confPass"/>
+									</div>
+									<button type="submit" class="btn btn-default">Sign Up</button>
+							</form>
+					</div>
+				<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  			<script type="text/javascript" src="bootstrap.js"></script>
+				<script type="text/javascript" src="form.js"></script>
+			
 			</body>
 		</head>
 	</html>
