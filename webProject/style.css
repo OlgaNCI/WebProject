@@ -24,12 +24,13 @@
   font-weight:bold;
 }
 .popover{
-  min-width:400px;
-  height:500px;;
-  position:absolute;
+  display:flex;
+  min-width:350px;
+  /*min-height:500px;*/
+  position:fixed;
   left:50%;
   top:10%;
-  background-color:#ccffdd;
+  background-color:#fff;
   border-width:4px;
   border-style:inset;
   border-color:white;
@@ -42,13 +43,22 @@
 }
 .form-control{
   background-color:gray;
-  width:80%;
+  width:100%;
   color:#fff;
 }
 .btn{
   color:white;
   background-color:gray;
+  position:relative;
+  left:20%; 
+}
+#cancel{
   position:absolute;
-  left:30%;
+  left:60%;
+
+}
+.g-recaptcha{
+  padding-left:20px;
+  padding-bottom:10px;
 }
    

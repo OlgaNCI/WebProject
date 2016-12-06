@@ -10,7 +10,8 @@
     	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these -->
 			<link href="bootstrap.min.css" rel="stylesheet"/>
 			<link href="style.css" rel="stylesheet"/>
-			
+			<script src='https://www.google.com/recaptcha/api.js'></script>
+		</head>	
 			<body>
 				
 				<div class="navbar-static-top navbar-inverse" id="home">
@@ -27,7 +28,7 @@
 			  	<li><a href="#destinations">Destinations</a></li>
 			  	<li><a href="#profile">Profile</a></li> 
 			  	<li><a id="signup-button" href="#">Sign Up</a></li>
-					<li><a href="#login">Login</a></li>
+					<li><a id="login-button" href="#">Login</a></li>
 		  	</ul>
 	   </div>
 	 			</div>
@@ -54,7 +55,7 @@
 					</table>
 				
 					<div id="signup" class="popover" role="tooltip" style="display: none">
-							<form role="form" action ="signup.php" method="post">
+							<form id="sign_form" role="form" action ="signup.php" method="post">
 									<div class="form-group">
 											<label for="username">Username:</label>
 											<input type="text" class="form-control" id="username" name="username"/>
@@ -71,15 +72,55 @@
 											<label for="confPass">Confirm Password:</label>
 											<input type="password" class="form-control" id="confPass" name="confPass"/>
 									</div>
-									<button type="submit" class="btn btn-default">Sign Up</button>
+									<div class="g-recaptcha" data-sitekey="6LcrxQ0UAAAAAMrEzbM9VuVd44JibCbgh-LCkR5h"></div>
+									<button type="submit" class="btn btn-default" name="submit" id="signup-btn">Sign Up</button>
+									<button type="button" class="btn" id="cancel" onclick="window.location='index.php'">Cancel</button>
 							</form>
 					</div>
-				<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+				<div id="log" class="popover" role="tooltip" style="display:none">
+					<form id="log_form" role="form" action ="login.php" method="post">
+									<div class="form-group">
+											<label for="username">Username:</label>
+											<input type="text" class="form-control" id="username" name="username"/>
+									</div>
+									<div class="form-group">
+											<label for="password">Password:</label>
+											<input type="password" class="form-control" id="password" name="password"/>
+									</div>
+									<button type="submit" class="btn btn-default" name="login" id="login-btn">Login</button>
+									<button type="button" class="btn" id="cancel" onclick="window.location='index.php'">Cancel</button>
+							</form>
+				</div>
+				<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+				<script type="text/javascript" src="bootstrap.min.js"></script>
+				<script type="text/javascript" src="npm.js"></script>
   			<script type="text/javascript" src="bootstrap.js"></script>
 				<script type="text/javascript" src="form.js"></script>
+				<script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
+				<script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.min.js"></script>
+					<script type="text/javascript">
+						$("#sign_form").validate({
+								rules: {
+										username: {
+											required: true
+										},
+										email: {
+											required: true
+										},
+										password: {
+											required: true
+										},
+										confPass: {
+											equalTo: password
+										}
+									
+								}
+						});
+					
+					</script>
 			
 			</body>
-		</head>
-	</html>
+		
+		</html>
 	</xsl:template>
 </xsl:transform>
