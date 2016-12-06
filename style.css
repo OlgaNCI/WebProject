@@ -1,13 +1,62 @@
 body {
-    background-image: url('images/beautiful_mountain_scenery-wallpaper-1920x1080.jpg');
-    color: #c05e63;
+    background-image: url('images/2.jpg');
+    background-attachment: fixed;
+    background-position: center;
+
+    color: #9ac4e1;
     font-size: 87.5%;
     font-family: Arial, 'Lucida Sans Unicode';
     line-height: 1.5;
     text-align: left;
 }
+
+
+#slideshow {
+    height: 100%;
+    width: 100%;
+
+}
+#slideshow img {
+    height: 100%;
+    width: 100%;
+
+}
+#pager {
+    height: 120px;
+    width: 100%;
+    position:absolute;
+    bottom: 5%;
+    background: rgba(0,0,0,.5);
+    z-index: 1000;
+    opacity: 0;
+    transition: all 0.3s ease-in-out 0s;
+}
+#pager:hover {
+    opacity: 1;
+}
+
+#prev {
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left:0;
+    margin: auto 10px;
+}
+#next {
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right:0;
+    margin: auto 10px;
+}
+/* Slider*/
 a {
     text-decoration: none;
+    color: #9ac4e1;
 }
 a:link, a:visited{
 
@@ -16,87 +65,132 @@ a:hover, a:active{
 
 }
 
+
+
+
 .body {
     margin: 0 auto;
-    width: 70%;
     clear: both;
-}
-.mainHeader banner{
+
+
+
+
 
 }
 
 
-.mainHeader nav{
-    background-color: rgb(76, 95, 99);
+/*navigation bar*/
+
+.container nav{
+    background-color: rgba(13, 14, 16, 0.75);
     height:40px;
+    width: 90%;
+    right: 75px;
+    position:fixed;
+    margin-top:25px;
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-    postition: fixed;
+    z-index: 2000;
+    overflow: hidden;
+
+
+
+
 }
-.mainHeader nav ul {
+.container nav ul {
 
     list-style: none;
     margin: 0 auto;
 }
 
-.mainHeader nav ul li{
+.container nav ul li{
     float: left;
     display: inline;}
+
 
 .mainContent .topContent nav ul li{
     float: left;
     display: inline;
+    position: relative;
+    z-index: 1500;
+    overflow: hidden;
 }
 
 
-.mainHeader nav a:link, .mainHeader nav a:visited {
+.container nav a:link, .mainHeader nav a:visited {
     color: #f9edb4;
     display: inline-block;
     padding: 10px 25px
-    /*assign location for links in header tabs
+    /*assigns location for links in header tabs
      */
 }
 /*1 link will always be used,this edits the active one*/
-.mainHeader nav a:hover, .maiinHeader nav a:active,
-.mainHeader nav .active a:link, .mainHeader nav .active a:visited{
+.container nav a:hover, .maiinHeader nav a:active,
+.container nav .active a:link, .mainHeader nav .active a:visited{
     background-color: #cf5a30;
     text-shadow: none;
 
 }
 
-.mainHeader nav ul li a {
+.container nav ul li a {
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
+
+    /*navigatino bar*/
 }
 .mainContent {
     line-height: 25px;
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-    overflow: hidden;
+
 }
 
 .content {
-    width: 70%;
-    front: left;
+    width: 80%;
+    position:relative;
+    right: -60px;
 }
 
 .topcontent {
+
+    border-radius: 5px;
+    background-color: rgba(240,248,255,.1);
+    height: 80%;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 3% 5%;
+    margin-top: 7%;
+
+
+
+}
+.bottomcontent {
+    background-color: rgba(240,248,255,.1);
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     padding: 3% 5%;
     margin-top: 2%;
-
 }
-.bottomcontent {
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
+.top-sidebar{
+    width:25%;
+    background-color: rgba(16, 17, 20, 0.8);
+    right:-60px;
+position:relative;
 }
-
-
+.middle-sidebar{
+    width:25%;
+    background-color: rgba(13,14,16,0.8);
+    right:-60px;
+    position:relative;
+}.bottom-sidebar {
+     width:25%;
+     background-color: rgba(13,14,16,0.8);
+     right:-60px;
+     position:relative;
+ }
 
 
