@@ -1,0 +1,102 @@
+body {
+    background-image: url('images/beautiful_mountain_scenery-wallpaper-1920x1080.jpg');
+    color: #c05e63;
+    font-size: 87.5%;
+    font-family: Arial, 'Lucida Sans Unicode';
+    line-height: 1.5;
+    text-align: left;
+}
+a {
+    text-decoration: none;
+}
+a:link, a:visited{
+
+}
+a:hover, a:active{
+
+}
+
+.body {
+    margin: 0 auto;
+    width: 70%;
+    clear: both;
+}
+.mainHeader banner{
+
+}
+
+
+.mainHeader nav{
+    background-color: rgb(76, 95, 99);
+    height:40px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    postition: fixed;
+}
+.mainHeader nav ul {
+
+    list-style: none;
+    margin: 0 auto;
+}
+
+.mainHeader nav ul li{
+    float: left;
+    display: inline;}
+
+.mainContent .topContent nav ul li{
+    float: left;
+    display: inline;
+}
+
+
+.mainHeader nav a:link, .mainHeader nav a:visited {
+    color: #f9edb4;
+    display: inline-block;
+    padding: 10px 25px
+    /*assign location for links in header tabs
+     */
+}
+/*1 link will always be used,this edits the active one*/
+.mainHeader nav a:hover, .maiinHeader nav a:active,
+.mainHeader nav .active a:link, .mainHeader nav .active a:visited{
+    background-color: #cf5a30;
+    text-shadow: none;
+
+}
+
+.mainHeader nav ul li a {
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.mainContent {
+    line-height: 25px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    overflow: hidden;
+}
+
+.content {
+    width: 70%;
+    front: left;
+}
+
+.topcontent {
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 3% 5%;
+    margin-top: 2%;
+
+}
+.bottomcontent {
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+
+
+
