@@ -1,0 +1,196 @@
+body {
+    background-image: url('images/2.jpg');
+    background-attachment: fixed;
+    background-position: center;
+
+    color: #9ac4e1;
+    font-size: 87.5%;
+    font-family: Arial, 'Lucida Sans Unicode';
+    line-height: 1.5;
+    text-align: left;
+}
+
+
+#slideshow {
+    height: 100%;
+    width: 100%;
+
+}
+#slideshow img {
+    height: 100%;
+    width: 100%;
+
+}
+#pager {
+    height: 120px;
+    width: 100%;
+    position:absolute;
+    bottom: 5%;
+    background: rgba(0,0,0,.5);
+    z-index: 1000;
+    opacity: 0;
+    transition: all 0.3s ease-in-out 0s;
+}
+#pager:hover {
+    opacity: 1;
+}
+
+#prev {
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left:0;
+    margin: auto 10px;
+}
+#next {
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right:0;
+    margin: auto 10px;
+}
+/* Slider*/
+a {
+    text-decoration: none;
+    color: #9ac4e1;
+}
+a:link, a:visited{
+
+}
+a:hover, a:active{
+
+}
+
+
+
+
+.body {
+    margin: 0 auto;
+    clear: both;
+
+
+
+
+
+}
+
+
+/*navigation bar*/
+
+.container nav{
+    background-color: rgba(13, 14, 16, 0.75);
+    height:40px;
+    width: 90%;
+    right: 75px;
+    position:fixed;
+    margin-top:25px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    z-index: 2000;
+    overflow: hidden;
+
+
+
+
+}
+.container nav ul {
+
+    list-style: none;
+    margin: 0 auto;
+}
+
+.container nav ul li{
+    float: left;
+    display: inline;}
+
+
+.mainContent .topContent nav ul li{
+    float: left;
+    display: inline;
+    position: relative;
+    z-index: 1500;
+    overflow: hidden;
+}
+
+
+.container nav a:link, .mainHeader nav a:visited {
+    color: #f9edb4;
+    display: inline-block;
+    padding: 10px 25px
+    /*assigns location for links in header tabs
+     */
+}
+/*1 link will always be used,this edits the active one*/
+.container nav a:hover, .maiinHeader nav a:active,
+.container nav .active a:link, .mainHeader nav .active a:visited{
+    background-color: #cf5a30;
+    text-shadow: none;
+
+}
+
+.container nav ul li a {
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+
+    /*navigatino bar*/
+}
+.mainContent {
+    line-height: 25px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+
+}
+
+.content {
+    width: 80%;
+    position:relative;
+    right: -60px;
+}
+
+.topcontent {
+
+    border-radius: 5px;
+    background-color: rgba(240,248,255,.1);
+    height: 80%;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 3% 5%;
+    margin-top: 7%;
+
+
+
+}
+.bottomcontent {
+    background-color: rgba(240,248,255,.1);
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 3% 5%;
+    margin-top: 2%;
+}
+.top-sidebar{
+    width:25%;
+    background-color: rgba(16, 17, 20, 0.8);
+    right:-60px;
+position:relative;
+}
+.middle-sidebar{
+    width:25%;
+    background-color: rgba(13,14,16,0.8);
+    right:-60px;
+    position:relative;
+}.bottom-sidebar {
+     width:25%;
+     background-color: rgba(13,14,16,0.8);
+     right:-60px;
+     position:relative;
+ }
+
+
