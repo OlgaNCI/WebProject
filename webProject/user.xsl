@@ -25,7 +25,7 @@
 	   	<div class="collapse navbar-collapse navHeaderCollapse">
 	      <ul class="nav navbar-nav navbar-right">
 		      <li><a href="#home">Home</a></li> 
-			  	<li><a href="#destinations">Destinations</a></li>
+			  	<li><a href="destinations.php">Destinations</a></li>
 			  	<li><a href="#profile">Profile</a></li> 
 			  	<li><a id="signup-button" href="#">Sign Up</a></li>
 					<li><a id="login-button" href="#">Login</a></li>
