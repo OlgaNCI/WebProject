@@ -26,8 +26,8 @@
 .popover{
   display:flex;
   min-width:350px;
-  /*min-height:500px;*/
-  position:fixed;
+  /*min-height:400px;*/
+  /*position:fixed;*/
   left:50%;
   top:10%;
   background-color:#fff;
@@ -61,4 +61,23 @@
   padding-left:20px;
   padding-bottom:10px;
 }
-   
+.shade
+ {
+ background: #e6ffee;
+ min-height: 200px;
+}   
+#p_about{
+  font-size:20px; 
+}
+.padding
+ {
+ padding-top: 20px;
+ padding-bottom: 20px;
+ }
+.foot
+ {
+ background:#e6ffee;
+ min-height:100px;
+ color:black;
+ text-align:center;
+ }
