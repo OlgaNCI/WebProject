@@ -11,11 +11,6 @@
 			<link href="bootstrap.min.css" rel="stylesheet"/>
 			<link href="style.css" rel="stylesheet"/>
 			<script src='https://www.google.com/recaptcha/api.js'></script>
-			<!--<script type="text/javascript">
-				function {
-					documentGetElementById("profile").style.display="none";
-				}
-			</script>-->
 		</head>	
 			<body>
 				<div class="navbar-static-top navbar-inverse" id="home">
@@ -26,7 +21,6 @@
 	   				<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
 	  				 Menu
 	  				</button>
-<<<<<<< HEAD
 						<div class="collapse navbar-collapse navHeaderCollapse">
 							<ul class="nav navbar-nav navbar-right">
 								<li><a href="#about">About</a></li> 
@@ -37,19 +31,7 @@
 							</ul>
 					 </div>
 	 				</div>
-=======
-	   	<div class="collapse navbar-collapse navHeaderCollapse">
-	      <ul class="nav navbar-nav navbar-right">
-		      <li><a href="#home">Home</a></li> 
-			  	<li><a href="destinations.php">Destinations</a></li>
-			  	<li><a href="#profile">Profile</a></li> 
-			  	<li><a id="signup-button" href="#">Sign Up</a></li>
-					<li><a id="login-button" href="#">Login</a></li>
-		  	</ul>
-	   </div>
 	 			</div>
->>>>>>> 73a416d82c79d4b985db705635b323d25534d34d
-				</div>
 				<div class="jumbotron">
 						<div class="container"></div>
 				</div>
