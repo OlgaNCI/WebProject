@@ -49,7 +49,7 @@
 																				love travelling! You can seek and share advise of the contries to visit, places to see,
 																				where to stay, eat and so on...<br/>
 																				Please sign up to become a member of our community, to be able to post blogs of your favourite journeys,
-																				to comment on other travelers' stories.</p>							 
+																				to comment on other travelers' stories. Enjoy your experience.</p>							 
 							</div>
 						</div>
 					</div>
