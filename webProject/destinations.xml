@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
-<?xml-stylesheet href = "movies.xsl" type = "text/xsl" ?>
-
-<destinations xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<?xml-stylesheet href = "destinations.xsl" type = "text/xsl" ?>
+<destinations> <!-- xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
   <country id="c1">
     <name>France</name>
     <descriptions>blah, blah</descriptions>
@@ -10,7 +9,7 @@
       <comments>
         
       </comments>
-    <post_description>post go here</post_description><post_username>username goes here</post_username></post>
+    </post>
  </country>
   
    <country id="c2">
