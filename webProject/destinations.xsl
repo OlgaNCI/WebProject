@@ -21,8 +21,6 @@
                 });
                 $("#comments_form").hide();
               });
-
-
         </script>
       </head>
   
@@ -31,20 +29,42 @@
   <body class="body">
     
 
-    <div id = "post_form">
+    <!--<div id="post_form">
     <form id = "form1" action = "form.php" method = "POST" >
       Post:
       <br/>
       <textarea rows="4" cols="50" type = "text" name="post_description">Input text Here </textarea>
       <br/>
       
-    <input type = "submit" form = "form1"/>
+    <input type = "submit" form = "form1" />
             
     </form>
+      
+    <table>
+      
+      <tr>
+        <xsl:for-each select="/destinations/country/post">
+            <th><xsl:value-of select = "post_username"/></th>
+            <td><xsl:value-of select = "post_description"/></td>
+        </xsl:for-each>
+       </tr>
+		</table>      
+    
     </div>
-    <!-- start of Johns codes-->
+    
     <div id='showPost'></div><br/>
-    <button>Write Comments</button>
+    <button name ="button">Write Comments</button>
+   
+      
+    <table>
+      <tr>
+        <xsl:for-each select="/destinations/country/post/comments">
+            <th><xsl:value-of select = "comments_username"/></th>
+            <td><xsl:value-of select = "post_ratings"/></td>
+            <td><xsl:value-of select = "comments"/></td>
+        </xsl:for-each>
+      </tr>
+		</table>
     
     <div id = "comments_form">
       <form id = "form2" action = "form2.php" method = "POST" >
@@ -67,7 +87,7 @@
       <input type = "submit" form = "form2" />
      </form>
       
-    </div>
+    </div> -->
     <!--john code end-->
     
     <!--the start of MK Codes-->
@@ -131,13 +151,91 @@ With The Colosseum, The Kremlin, The Eiffel Tower and all the musical charms of 
 The west has the social glory of previous domains: the Places of Parliament in London, the exquisite yet dreamlike specialty of Barcelona and the 'mainstays of progress' in the disintegrating structures of Athens (also the delights of old-world Rome). Toward the east you'll locate a world developing quick from the leftovers of socialism, and favored with the natural magnificence of the Romanian farmland and a forcing gothic look crossed with bohemian oddity in lovely Prague.
 Getting around is simple, with long separation transports, spending aircrafts and Euro rail passes that'll keep you bouncing through nations in abundance, and a constantly expanding number of able English speakers to help you on your way. Over every outskirt another welcome anticipates you: a glass of wine in France, an additional quality espresso in Italy, a Guinness in Dublin, a bowl of olives in Greece and a slug of vodka in the Ukraine, every one special, and each remarkable.
                   </p>
-
+                  
+                  <div id="post_form">
+    <form id = "form1" action = "form.php" method = "POST" >
+      Post:
+      <br/>
+      <textarea rows="4" cols="50" type = "text" name="post_description">Input text Here </textarea>
+      <br/>
+      
+    <input type = "submit" form = "form1" />
+            
+    </form>
+      
+    <table>
+      
+      <tr>
+        <xsl:for-each select="/destinations/country/post">
+            <th>Username:<xsl:value-of select = "post_username"/></th>
+        </xsl:for-each>
+      </tr>
+      <tr>
+        <xsl:for-each select="/destinations/country/post">
+            <th>Post:<xsl:value-of select = "post_description"/></th>
+        </xsl:for-each>
+      </tr>
+		</table>      
+    
+    </div>
+   
+    <div id='showPost'></div><br/>
+    <button name = "button">Write Comments</button>
+   
+      
+    <table>
+      <tr>
+        <xsl:for-each select="/destinations/country/post/comments">
+            <th>Username:<xsl:value-of select = "comments_username"/></th>      
+        </xsl:for-each>
+      </tr>
+      <tr>
+        <xsl:for-each select="/destinations/country/post/comments">          
+            <td>Rating:<xsl:value-of select = "post_ratings"/></td>            
+        </xsl:for-each>
+      </tr>
+      <tr>
+        <xsl:for-each select="/destinations/country/post/comments">
+            <td>Comments:<xsl:value-of select = "comments"/></td>
+        </xsl:for-each>
+      </tr>
+      
+      
+		</table>
+    
+    <div id = "comments_form">
+      <form id = "form2" action = "form2.php" method = "POST" >
+        Rate:
+        <br/>
+        <select name = "ratings" form = "form2">
+          <option value = "1">1</option>
+          <option value = "2">2</option>
+          <option value = "3">3</option>
+          <option value = "4">4</option>
+          <option value = "5">5</option>
+          
+        </select>
+        <br/>
+        
+        Comments:
+        <br/>
+      <textarea rows="4" cols="50" type = "text" name="comments">Input text Here </textarea>
+      <br/>
+      <input type = "submit" form = "form2" />
+     </form>
+      
+    </div>
+                  
+               
                 </footer>
 
                 <template>
                     <p>
                         write post
                     </p>
+                  
+                  
+                  
                 </template>
             </article>
         </div>
