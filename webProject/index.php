@@ -15,5 +15,4 @@ $proc->importStyleSheet($xsl);
 
 //transform xml and output result
 echo $proc->transformToXML($xml);
-
 ?>

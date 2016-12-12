@@ -24,10 +24,10 @@
 						<div class="collapse navbar-collapse navHeaderCollapse">
 							<ul class="nav navbar-nav navbar-right">
 								<li><a href="#about">About</a></li> 
-								<li><a href="#destinations">Destinations</a></li>
-								<li><a id="profile-button" href="#prof">Profile</a></li> 
+								<li><a id="destinations" href="#destinations">Destinations</a></li>
+								<li><a id="profile-button" href="#prof" class="hidden">Profile</a></li> 
 								<li><a id="signup-button" href="#">Sign Up</a></li>
-								<li><a id="login-button" href="#">Login</a></li>
+								<li><a id="login-button" href="#log">Login</a></li>
 							</ul>
 					 </div>
 	 				</div>
@@ -49,19 +49,38 @@
 						</div>
 					</div>
 				</div>
-				<div id="profile" style="display: none">
+				<div id="profile">
 					<div class="container">
-						<h1>Description</h1>
+						<h1>Hello "User"! Now you can set up your profile.</h1>
+						<!--Input fields for user-->
+						<form id="userInfo" role="form" action="signup.php" method="post">
+							<div class="form-group">
+								<label for="summary">Profile Summary</label>
+								<textarea class="form-control" name="summary" id="summary" placeholder="Write about yourself"></textarea> 
+							</div>
+							<div class="form-group">
+								<label for="fileToUpload">Upload your photo</label>
+							 	<input type="file" name="fileToUpload" id="fileToUpload"/>
+							</div>							
+   						<input type="submit" value="Upload Image" name="submit"/>
+						</form>
 							<table>
 								<tr>
 									<th>Name</th>
-									<th>e-mail address</th>
-									<th>Photo</th>
+									<th>e-mail address</th>									
 								</tr>
 								<xsl:for-each select="/userpage/user">
 									<tr>
 										<td><xsl:value-of select="username"/></td>
-										<td><xsl:value-of select="email"/></td>
+										<td><xsl:value-of select="email"/></td>																			
+									</tr>
+									<tr>
+										<td><xsl:value-of select="profile/summary"/></td>
+									</tr>
+									<tr>
+										<th>Photo</th>
+									</tr>
+									<tr>
 										<td><img src="{profile/image}" class="img-responsive"/></td>
 									</tr>
 								</xsl:for-each>
@@ -69,7 +88,7 @@
 						</div>
 				</div>
 				<div id="signup" class="popover" role="tooltip" style="display: none">
-						<form id="sign_form" role="form" action ="signup.php" method="post">
+						<form id="sign_form" name="signUpForm" role="form" action="">
 								<div class="form-group">
 										<label for="username">Username:</label>
 										<input type="text" class="form-control" id="username" name="username"/>
@@ -86,23 +105,37 @@
 										<label for="confPass">Confirm Password:</label>
 										<input type="password" class="form-control" id="confPass" name="confPass"/>
 								</div>
-								<div class="g-recaptcha" data-sitekey="6LcrxQ0UAAAAAMrEzbM9VuVd44JibCbgh-LCkR5h"></div>
-								<button type="submit" class="btn btn-default" name="submit" id="signup-btn">Sign Up</button>
-								<button type="button" class="btn" id="cancel" onclick="window.location='index.php'">Cancel</button>
+							
+							<script type='text/javascript'>
+												var captchaContainer = null;
+												var loadCaptcha = function() {
+													captchaContainer = grecaptcha.render('captcha_container', {
+														'sitekey' : '6LcrxQ0UAAAAAMrEzbM9VuVd44JibCbgh-LCkR5h'
+													});
+												};
+    					</script>
+							
+								<!-- <div id="captcha" class="g-recaptcha" data-sitekey="6LcrxQ0UAAAAAMrEzbM9VuVd44JibCbgh-LCkR5h"></div> -->
+							<div id="captcha_container" class="g-recaptcha"></div>
+								<button type="submit" class="btn btn-default" name="submit-button" id="signup-btn">Sign Up</button>
+								<button type="button" class="btn" id="cancelSignup" onclick="submitFormClose()">Cancel</button>
 						</form>
+					
+					<script src="https://www.google.com/recaptcha/api.js?onload=loadCaptcha&amp;render=explicit" async="async" defer="defer"></script>
+					
 				</div>
 				<div id="log" class="popover" role="tooltip" style="display:none">
 					<form id="log_form" role="form" action ="login.php" method="post">
 									<div class="form-group">
 											<label for="username">Username:</label>
-											<input type="text" class="form-control" id="username" name="username"/>
+											<input type="text" class="form-control" id="loginName" name="username"/>
 									</div>
 									<div class="form-group">
 											<label for="password">Password:</label>
-											<input type="password" class="form-control" id="password" name="password"/>
+											<input type="password" class="form-control" id="loginPassword" name="password"/>
 									</div>
 									<button type="submit" class="btn btn-default" name="login" id="login-btn">Login</button>
-									<button type="button" class="btn" id="cancel" onclick="window.location='index.php'">Cancel</button>
+									<button type="button" class="btn" id="cancelLogin" onclick="loginFormClose()">Cancel</button>
 							</form>
 				</div>
 				<div class="foot">
@@ -116,26 +149,10 @@
 				<script type="text/javascript" src="bootstrap.min.js"></script>
   			<script type="text/javascript" src="bootstrap.js"></script>
 				<script type="text/javascript" src="form.js"></script>
+				<script type="text/javascript" src="js/automation.js"></script>
+				<script type="text/javascript" src="js/loginautomation.js"></script>
 				<script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
-				<script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.min.js"></script>
-				<script type="text/javascript">
-						$("#sign_form").validate({
-								rules: {
-										username: {
-											required: true
-										},
-										email: {
-											required: true
-										},
-										password: {
-											required: true
-										},
-										confPass: {
-											equalTo: password
-										}							
-								}
-						});			
-				</script>	
+				<script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.min.js"></script>	
 			</body>	
 		</html>
 	</xsl:template>
