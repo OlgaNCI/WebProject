@@ -199,22 +199,14 @@
         <div class="content">
             <div id="ukcontent">
 
-                <div>
-                    <p>United Kingdom</p>
+              <xsl:for-each select="/destinations/country/name[text()='United Kingdom']"> 
+							<div>
+                    <p><xsl:value-of select = "../name"/></p>
                 </div>
                 <p>
-                    A political union of Britain, Scotland, Wales and Northern Ireland,
-                    the UK has an astounding mix of societies to offer.
-                    It's no more drawn out the universe of top caps and strolling sticks;
-                    rather you'll discover a land saturated with heavenly history,
-                    and home to a vivacious music scene and beguiling field.
-                    London is the place to go for both music and a great deal of those scandalous locales.
-                    Stroll around the Places of Parliament and Huge Ben, Up in Scotland,
-                    the magnificence of Edinburgh and famous grit of Glasgow are both enormous draws.
-                    Make a beeline for the good countries to discover natural manors,
-                    ancient estates.Northern Ireland is a flight (or boat ride) away,
-                    however justified regardless of the bother for the magnificence of Belfast.
+									<xsl:value-of select = "../descriptions"/>
                 </p>
+							</xsl:for-each>
 							
 							<div id="post_form">
 			<form id = "form1" action = "form.php" method = "POST" >
@@ -313,15 +305,15 @@
     <div class="mainContent">
         <div class="content">
             <article id="italycontent">
-
+						
+				    <xsl:for-each select="/destinations/country/name[text()='Italy']"> 
                 <div>
-                    <p>Italy</p>
+                    <p><xsl:value-of select = "../name"/></p>
                 </div>
                 <p>
-                    In capital Rome you'll discover copious hints of the Roman Domain in the Colosseum and the innumerable disintegrating landmarks spread all through the city. Vatican City, a little nation inside the city's limits, rouses guests with the specialty of the Sistine House of prayer, the love of St Subsides and the historical backdrop of the Vatican Exhibition halls, and additionally the harlequin hues and staunch mien of the renowned Swiss Watch. At that point there's the Trevi Wellspring, the Spanish Strides, the Supreme Gatherings, Piazza Navona…
-
-                    Sentimental people will discover riding the rising waters of Venice and investigating its renaissance design an overwhelming draw, venturing out of their inn specifically onto a bending longboat. In as much as they stay away from the undeniably regular floods, that is. Florence, and its unlimited columns of red-roofed houses aren't a long ways behind.
-                </p>
+									<xsl:value-of select = "../descriptions"/>
+                 </p>
+							</xsl:for-each>
 							
 							<div id="post_form">
 			<form id = "form1" action = "form.php" method = "POST" >
@@ -411,19 +403,14 @@
         <div class="content">
             <article id="spaincontent">
 
+                <xsl:for-each select="/destinations/country/name[text()='Spain']"> 
                 <div>
-                    <p>Spain</p>
+                    <p><xsl:value-of select = "../name"/></p>
                 </div>
                 <p>
-                    As a famously showy corner of what Europeans joyfully consider as 'sunbathing domain',
-                    Spain is home to an inviting blend of Mediterranean culture and its own particular interesting
-                    (and frequently conflicting) standards). As the enthusiastic country home to flamenco and bull battling in a few corners,
-                    and in addition awesome fish and strong alcoholic espresso, this is a nation that is just as tempting off the beaten track as on,
-                    so much so that an Englishman as of late invested months sitting by a telephone confine a 'social examination'.
-                    We can't help supposing it was more for no particular reason... Investigate cosmopolitan Barcelona,
-                    lounge on the shorelines of Andalucía and climb among the rough pinnacles of the Pyrenees.
-                    Retaining the way of life is a basic part of a Spanish trek; you'll need to get used to lunchtime rests, olives with each feast.
-                </p>
+									<xsl:value-of select = "../descriptions"/>
+                 </p>
+							</xsl:for-each>
             </article>
 
         </div>
@@ -435,15 +422,16 @@
         <div class="content">
             <article id="francecontent">
 
+                <xsl:for-each select="/destinations/country/name[text()='France']"> 
                 <div>
-                    <p>France</p>
+                    <p><xsl:value-of select = "../name"/></p>
                 </div>
                 <p>
-                    From the notorious structures and tasteful cooking styles of Paris to the vineyards of Champagne, most voyagers are more than mindful of France's amazing (and sentimental) resume, and as of now have the nation of culture high on their voyaging hit list.
-
-                    Paris doesn't disillusion for sure, with the greatness of the Seine (and it's scandalously partitioned east and west banks), the class of Notre Lady and the sentiment of nightfall over the Eiffel Tower. Best of all, it's not only the locales that are captivating.
-
-                </p>
+									<xsl:value-of select = "../descriptions"/>
+                 </p>
+							</xsl:for-each>
+							
+							
 							<div id="post_form">
 			<form id = "form1" action = "form.php" method = "POST" >
 				Post:
@@ -542,23 +530,14 @@
         <div class="content">
             <article id="germanycontent">
 
+                <xsl:for-each select="/destinations/country/name[text()='Germany']"> 
                 <div>
-                    <p>Germany</p>
+                    <p><xsl:value-of select = "../name"/></p>
                 </div>
                 <p>
-                    A place that is known for dynamic urban communities and sensitive, manor covered wide open, Germany blends the old and the new into a tantalizing touristic mix. From the Lederhosen and plentiful, maturing brew lobbies to the world capital of techno and streets without speed limits, there are few who won't discover something to love.
-                    In case you're a city sort, Berlin's reality class galleries, insuppressible techno parties (in case you're a substantial move aficionado, Berlin's decadent yearly 'Love Parade' is most likely your concept of paradise) and look at the narrowing city partition and what's left of the Berlin Divider. Munich has it's own motivation, gladly saturated with Bavarian culture and overflowing with conventional lederhosen-filled lager corridors. Once per year, Oktoberfest comes to town, and appears to carry a large portion of the world with it. Welcome to another relentless, lager swilling German gathering.
-
-                </p>
-                <div class="city">
-                    <h2>Berlin</h2>
-                    <p>
-                        Berlin is the capital of Germany, and the biggest city by populace. It has a universal notoriety for being a to a great degree tolerant and liberal center point of innovation, with a wide assortment of exhibition halls, design, and sights like the Berlin Divider.
-                        Today, next to no remaining parts of the Divider. The city has quickly conquer its notoriety since the fall of the Divider toward the end of the Frosty War, and now is also called a worldwide hotspot for gathering creatures and form appears. While the city is generally youthful by European models, just going back to the thirteenth century, it has gathered a notoriety the greater part of its own throughout the years.
-
-                    </p>
-
-                </div>
+									<xsl:value-of select = "../descriptions"/>
+                 </p>
+							</xsl:for-each>
             </article>
 
         </div>
@@ -570,18 +549,14 @@
         <div class="content">
             <article id="netherlandscontent">
 
+               <xsl:for-each select="/destinations/country/name[text()='Netherlands']"> 
                 <div>
-                    <p> Netherlands</p>
+                    <p><xsl:value-of select = "../name"/></p>
                 </div>
                 <p>
-                    The Netherlands is the place where there is windmills, whores and lawful medications. In any event that is the thing that you presumably definitely think about the nation, yet those are only the feature producers: what for the most part shocks is that this little corner of Europe is overwhelmingly lovely. Yes, capital Amsterdam is an indulgent play area where you can do things you wouldn't dream of doing at home, and yes it has its own particular sex exhibition hall. Among the lanes of Europe's most tolerant city, be that as it may, are tranquil, winding trenches, cobbled paths, patio nurseries of clear tulips and a glorious building brimming with the works of Van Gogh. So no, it's not only for gathering creatures and stag evenings, however most guests wind up in a café, or floating through the shady area of town at some stage (only for diversion estimation obviously – don't have a go at taking photos!).   </p>
-                <div class="city">
-                    <h2>Amsterdam</h2>
-                    <p>
-                        We as a whole comprehend what goes through the normal youthful personality when it hears the word 'Amsterdam'. It may be the liberal home of medications and prostitution, yet the Dutch capital is likewise a delightful corner of the world; a place where traditional music and channels, forcing design and aesthetic historical centers are as much a piece of life as any of the city's all the more outstanding distractions. Amsterdam vacationer spot is around Zeedijk range and it's acclaimed with the called " Seedy area of town", such a variety of bars and delight things all blended in one in Damrak territory.
-                    </p>
-
-                </div>
+									<xsl:value-of select = "../descriptions"/>
+                 </p>
+							</xsl:for-each>
             </article>
 
 
@@ -594,18 +569,14 @@
         <div class="content">
             <article id="irelandcontent">
 
+                <xsl:for-each select="/destinations/country/name[text()='Ireland']"> 
                 <div>
-                    <p>Ireland</p>
+                    <p><xsl:value-of select = "../name"/></p>
                 </div>
-               <p>
-                   Ireland - home of numerous well known essayists, artists, vocalists and music, of St Patrick, Guinness, bourbon and a unimaginably huge number of outstanding bars – can be stormy, now and again even devastate, yet never not exactly uncommonly fun. Ireland has profited significantly from its EU enrollment, and nearby all the old conventions – the late night bar singalongs and little however perfectly picturesque cultivating groups – you'll discover the island of Ireland is moving with the circumstances.    </p>
-                <div class="city">
-                    <h2>Dublin</h2>
-                    <p>
-                        The temple Bar locale is at the heart of it. The Irish are a vivaciously friendly group, and the cobbled roads of Sanctuary Bar have gatherings after quite a while, local people empowered on Dublin Straight fish and slurping half quart after 16 ounces of 'The Dark Stuff' (Guinness) while listening to the twanging hints of customary Irish music, and combining in the scan for a late night 'secure' to keep the party moving until day break.
-                    </p>
-
-                </div>
+                <p>
+									<xsl:value-of select = "../descriptions"/>
+                 </p>
+							</xsl:for-each>
             </article>
 
 
@@ -617,22 +588,14 @@
         <div class="content">
             <article id="belgiumcontent">
 
+                <xsl:for-each select="/destinations/country/name[text()='Belgium']"> 
                 <div>
-                    <p>Belgium</p>
+                    <p><xsl:value-of select = "../name"/></p>
                 </div>
-                <p>One of the establishing individuals from the European Union, Belgium has for quite some time been viewed as one of the junction of Europe, where the Germanic and Latin societies meet. The nation is known globally for its solid lagers, its waffles and chocolates, its landscape, and its casual perspectives on governmental issues, religion, sexuality, and life by and large.
-                    The Romans gave Belgium its name when they made the area of Gallia Belgica in the principal century BC. Throughout the years the nation has seen a changing line of rulers from a few distinct nations until the establishing of the nation in 1830. From that point forward the nation has been a sacred government and parliamentary majority rules system and a herald in European mix through the Benelux and the EU, has made ready for other European nations to follow afterward.
-
-
-                </p>
-                <div class="city">
-                    <h2>Brussels</h2>
-                    <p>
-                        As the creative heart of the EU, Brussels is fundamentally multicultural, a vibe that is just highlighted an inclination that the city's dependably been partitioned – half French, half Flemish - however both parts appear to make the most of their mussels and take their 'pomme frites' with a strange and heavy side of mayonnaise.
-                        The Belgian capital even has an African quarter where you can nibble on dried caterpillars, however the more evident elements are in the winding medieval back roads of the lower city and the stately structures and streets of the upper half.
-                    </p>
-
-                </div>
+                <p>
+									<xsl:value-of select = "../descriptions"/>
+                 </p>
+							</xsl:for-each>
             </article>
 
         </div>
@@ -644,19 +607,14 @@
         <div class="content">
             <article id="turkeycontent">
 
+                <xsl:for-each select="/destinations/country/name[text()='Turkey']"> 
                 <div>
-                    <p>Turkey</p>
+                    <p><xsl:value-of select = "../name"/></p>
                 </div>
                 <p>
-                    A standout amongst the most essential nations as far as area as an extension amongst Europe and Asia, and a standout amongst the most socially critical nations with a history going back to ancient circumstances, Turkey straddles the crevice amongst Asia and Europe along the Dark Ocean, the Mediterranean Ocean, and the Aegean Ocean, while in the meantime offering outskirts to Bulgaria, Greece, Armenia, Azerbaijan, Georgia, Syria, Iraq, and Iran. The nation as it exists today was initially framed in 1923. It is a boundless cluster of various geology, and the atmosphere ranges from run of the mill beach front territories along the coastlines of the Mediterranean, Aegean, and the Dark Oceans, while the outskirt along the south close Syria is abandon, and parts of the inside are forested and precipitous.
-                </p>
-                <div class="city">
-                    <h2>Istanbul</h2>
-                    <p>
-                        Istanbul is likely one of the most smoking goals in the 21st century with regards to the European-Asian side of the world. Alongside being the most populated city in Turkey, Istanbul has been one of the significant focus purposes of the world for truly a great many years. Once known as Constantinople and Byzantium, and home to one of the last Roman stations for a thousand years before it was vanquished by the Footrest ruler Sultan Mehmed II and thusly turning out to be a piece of a Muslim country, Istanbul is one of those mysterious goals that brags close legendary history and legends which encompass the engineering and pervade the guest with a feeling of ponder, and a practically ethereal out-of-this-world vibe that can't be coordinated anyplace else on the planet.
-                    </p>
-
-                </div>
+									<xsl:value-of select = "../descriptions"/>
+                 </p>
+							</xsl:for-each>
             </article>
 
         </div>
@@ -670,22 +628,14 @@
         <div class="content">
             <article id="polandcontent">
 
+                <xsl:for-each select="/destinations/country/name[text()='Poland']"> 
                 <div>
-                    <p>Poland</p>
+                    <p><xsl:value-of select = "../name"/></p>
                 </div>
                 <p>
-                    One of the Baltic countries in Focal Europe flanked by Belarus, the Czech Republic, Germany, Lithuania, Russia, Slovakia, and the Ukraine, Poland figures out how to emerge among the rest with its rich history, astonishing farmland, and its unmistakable social interest. From its first settlement in Biskupin at some point before the seventh century BC, to its Roman roots, and the possible brilliant time amid the fourteenth through the sixteenth century when its kingdom extended from the Baltic to the Dark and Adriatic oceans, Poland has for some time been a standard of strength inside the locale. But then, for a nation with such a respectable legacy, Poland has been invade a larger number of times than most, because of its key area in Europe. It has seen more than its share of war, yet the nation has bounced back over and over as of recently it stands, pleased and straight, as it walks into the 21st century.
-                </p>
-                <div class="city">
-                    <h2>Warsaw</h2>
-                    <p>
-                        Warsaw has a shockingly old-world climate to it. It's especially unanticipated as Poland's capital was transformed into a substantial store of rubble by the Second World War, and has been revamped in established style by its pleased subjects, and bewildering accomplishment of triumph despite assorted qualities that still characterizes the local's character from various perspectives: unyielding, dynamic and high accomplishing.
-
-                        In spite of their retrogressive looking design misuses, the natives of Warsaw are famously ground breaking, and the capital has turned out to be hard to coordinate regarding contemporary excitement, with a fortunate nightlife and hyper music scene.
-
-                    </p>
-
-                </div>
+									<xsl:value-of select = "../descriptions"/>
+                 </p>
+							</xsl:for-each>
             </article>
 
         </div>
