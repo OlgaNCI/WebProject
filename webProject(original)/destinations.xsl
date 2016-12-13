@@ -121,7 +121,7 @@
 
     <div id="container">
         <ul>
-          <li><a href="index.php">About</a></li>
+        <li><a href="index.php">Main</a></li>
         <li><a href="#eucontent">Europe</a></li>
         <li><a href="#ukcontent">United Kingdom</a></li>
         <li><a href="#italycontent">Italy</a></li>
@@ -244,7 +244,11 @@
     </div>
    
     <div id='showPost'></div><br/>
-    <button name = "button">Write Comments</button>    
+    <button name = "button">Write Comments</button>
+   
+      
+    
+    
     <div id = "comments_form">
 			
 			<table>
@@ -263,7 +267,8 @@
             <td><b>Comments:</b><xsl:value-of select = "../post/comments/comments"/></td>
         </xsl:for-each>
       </tr>
-          
+      
+      
 		</table>
 						
       <form id = "form2" action = "form2.php" method = "POST" >
@@ -695,7 +700,7 @@
 
 
 <footer class="mainFooter">
-    <p>Copyright: BonVoyagers</p>
+    <p>Copyright stuff or whatever</p>
 </footer>
 </body>
 

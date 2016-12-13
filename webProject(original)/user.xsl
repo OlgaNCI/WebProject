@@ -24,7 +24,7 @@
 						<div class="collapse navbar-collapse navHeaderCollapse">
 							<ul class="nav navbar-nav navbar-right">
 								<li><a href="#about">About</a></li> 
-								<li><a id="destinations" class="hidden" href="destinations.php">Destinations</a></li>
+								<li><a id="destinations" href="destinations.php">Destinations</a></li>
 								<li><a id="profile-button" href="#prof" class="hidden">Profile</a></li> 
 								<li><a id="signup-button" href="#">Sign Up</a></li>
 								<li><a id="login-button" href="#log">Login</a></li>
@@ -49,11 +49,11 @@
 						</div>
 					</div>
 				</div>
-				<div id="profile" style="display:none">
+				<div id="profile">
 					<div class="container">
 						<h1>Hello "User"! Now you can set up your profile.</h1>
 						<!--Input fields for user-->
-						<form id="userInfo" role="form" action="profile.php" method="post" enctype="multipart/form-data">
+						<form id="userInfo" role="form" action="signup.php" method="post">
 							<div class="form-group">
 								<label for="summary">Profile Summary</label>
 								<textarea class="form-control" name="summary" id="summary" placeholder="Write about yourself"></textarea> 
@@ -62,7 +62,7 @@
 								<label for="fileToUpload">Upload your photo</label>
 							 	<input type="file" name="fileToUpload" id="fileToUpload"/>
 							</div>							
-   						<input type="submit" id="profileSubmit" value="Upload Image" name="submit"/>
+   						<input type="submit" value="Upload Image" name="submit"/>
 						</form>
 							<table>
 								<tr>
@@ -73,9 +73,6 @@
 									<tr>
 										<td><xsl:value-of select="username"/></td>
 										<td><xsl:value-of select="email"/></td>																			
-									</tr>
-									<tr>
-										<th>Profile Summary</th>
 									</tr>
 									<tr>
 										<td><xsl:value-of select="profile/summary"/></td>
@@ -91,7 +88,7 @@
 						</div>
 				</div>
 				<div id="signup" class="popover" role="tooltip" style="display: none">
-						<form id="sign_form" name="signUpForm" role="form" action="form.php" method="POST"> <!-- action="form.php" method="POST"-->
+						<form id="sign_form" name="signUpForm" role="form" action="form">  <!--action="form.php" method = "POST"-->
 								<div class="form-group">
 										<label for="username">Username:</label>
 										<input type="text" class="form-control" id="username" name="username"/>
@@ -121,7 +118,7 @@
 								<!-- <div id="captcha" class="g-recaptcha" data-sitekey="6LcrxQ0UAAAAAMrEzbM9VuVd44JibCbgh-LCkR5h"></div> -->
 							<div id="captcha_container" class="g-recaptcha"></div>
 								<button type="submit" class="btn btn-default" name="submit-button" id="signup-btn">Sign Up</button>
-								<button type="button" class="btn" id="cancelSignup" onclick="signupFormClose()">Cancel</button>
+								<button type="button" class="btn" id="cancelSignup" onclick="submitFormClose()">Cancel</button>
 						</form>
 					
 					<script src="https://www.google.com/recaptcha/api.js?onload=loadCaptcha&amp;render=explicit" async="async" defer="defer"></script>

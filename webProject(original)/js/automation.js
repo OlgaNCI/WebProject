@@ -22,7 +22,6 @@ $.ajax({
             $("#sign_form")[0].reset();
             $('#signup').hide();
             $('#profile-button').removeClass('hidden');
-            alert ("User created, please proceed to profile");
           }
         }
       },

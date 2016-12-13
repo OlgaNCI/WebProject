@@ -23,7 +23,6 @@ var loginForm = function() {
                    alert("User Login success");
                    $('#log').hide();
                    $('#profile-button').removeClass('hidden');
-                   $('#destinations').removeClass('hidden');
                    break;
                }
         }

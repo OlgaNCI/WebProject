@@ -7,12 +7,12 @@
     echo"Error";
   }
 
- //store form date in variables
+  //store form date in variables
  $post_description = $_POST["post_description"];
  $post_username = "username goes here"; //$_POST["username"];
 
   if(file_exists('destinations.xml')){
-      //load data from xml file into xml variable
+      //load date from xml file into xml variable
       $xml = simplexml_load_file('destinations.xml');
       //add new element to variable
       $xml->country->post->addChild('post_description', $post_description);
@@ -20,7 +20,7 @@
       
     }
   else{
-    exit('Failed to open timetable.xml');//error message
+    exit('Failed to open destinations.xml');//error message
   }
 
   

@@ -1,5 +1,5 @@
 <?php
-//prevent form redirect
+  //prevent form redirect
   if(isset($_SERVER['HTTP_REFERER'])){
     header("Location: ".$_SERVER['HTTP_REFERER']);
   }
@@ -7,18 +7,16 @@
     echo"Error";
   }
 
-  //store form date in variables
- $comments = $_POST["comments"]; 
- $ratings = $_POST["ratings"];
- $comments_username = "username goes here"; //$_POST["username"];
+ //store form date in variables
+ $post_description = $_POST["post_description"];
+ $post_username = "username goes here"//$_POST["username"];   
 
   if(file_exists('destinations.xml')){
-      //load date from xml file into xml variable
+      //load data from xml file into xml variable
       $xml = simplexml_load_file('destinations.xml');
       //add new element to variable
-      $xml->country->post->comments->addChild('comments_username', $comments_username);
-      $xml->country->post->comments->addChild('post_comments', $ratings);
-      $xml->country->post->comments->addChild('comments', $comments);
+      $xml->country->post->addChild('post_description', $post_description);
+      $xml->country->post->addChild('post_username', $post_username);
       
     }
   else{

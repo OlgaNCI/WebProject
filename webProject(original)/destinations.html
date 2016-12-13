@@ -1,27 +1,26 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
-<xsl:output method="html" doctype-public="XSLT-compat" omit-xml-declaration="yes" encoding="UTF-8" indent="yes" />
-  <xsl:template match = "/">
-    
-<html lang="en" >
-<head>
-    <title>
-        BonVoyage
-    </title>
-    <meta charset="UTF-8"/>
-    <link href="destinationsStyle.css" rel="stylesheet" type="text/css"/>
-    <meta name="viewport" content="width=device-width, initial scare=1.8"/>
+<html lang="en">
+  <head>
+    <title>Bon Voyager</title>
+    <!--start of MK codes-->
+    <meta charset="UTF-8">
+        <link href="destinationsStyle.css" rel="stylesheet" type="text/css"/>
+        <meta name="viewport" content="width=device-width, initial scare=1.8">
+      
+          <script type="text/javascript" src="js/cycle2.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!--end of MK codes-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/cycle2.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script>
-          $(document).ready(function(){
-              $("button").click(function(){
-                $("#comments_form").toggle();
-                });
-                $("#comments_form").hide();
-              });
-        </script>
+    <script>
+      $(document).ready(function(){
+          $("button").click(function(){
+            $("#comments_form").toggle();
+            });
+            $("#comments_form").hide();
+          });
+
+      
+    </script>
+    
 
     <script>
 
@@ -37,7 +36,7 @@
 
         function bubbles(bi){
             _("bubblecontent").style.opacity = 0;
-            for(var i=0; i = ba.length ; i++){ <!--for(var i=0; i = ba.length ; i++){-->
+            for(var i=0; i < ba.length; i++){
                 ba[i].style.background = "rgba(0,0,0,.1)";
             }
             ba[bi].style.background = "#999";
@@ -46,7 +45,6 @@
                 _("bubblecontent").style.opacity = 1;
             }, 300);
         }
-																			
         function bubbleSlide(){
             bi++;
             if(bi == ba.length){
@@ -112,16 +110,81 @@
 
 
     </style>
+  </head>
+  
+  
+  
+  <body class="body">
+    
+<script>
+displayCD(0);
 
-</head>
+function displayCD(i) {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            myFunction(this, i);
+        }
+    };
+    xmlhttp.open("GET", "destinations.xml", true);
+    xmlhttp.send();
+}
 
+function myFunction(xml, i) {
+    var xmlDoc = xml.responseXML; 
+    x = xmlDoc.getElementsByTagName("country");
+    document.getElementById("showPost").innerHTML =
+    "Artist: " +
+    x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
+    "<br>Title: " +
+    x[i].getElementsByTagName("descriptions")[0].childNodes[0].nodeValue +
+    "<br>Year: " + 
+    x[i].getElementsByTagName("ratings")[0].childNodes[0].nodeValue;
+}
+</script>
 
-
-<body class="body">
-
-    <div id="container">
+    <div id = "post_form">
+    <form id = "form1" action = "form.php" method = "POST" >
+      Post:
+      <br/>
+      <textarea rows="4" cols="50" type = "text" name="post_description">Input text Here </textarea>
+      <br/>
+      
+    <input type = "submit" form = "form1">
+            
+    </form>
+    </div>
+    
+    <div id='showPost'></div><br/>
+    <button>Write Comments</button>
+    
+    <div id = "comments_form">
+      <form id = "form2" action = "form2.php" method = "POST" >
+        Rate:
+        <br/>
+        <select name = "ratings" form = "form2">
+          <option value = "1">1</option>
+          <option value = "2">2</option>
+          <option value = "3">3</option>
+          <option value = "4">4</option>
+          <option value = "5">5</option>
+          
+        </select>
+        <br/>
+        
+        Comments:
+        <br/>
+      <textarea rows="4" cols="50" type = "text" name="comments">Input text Here </textarea>
+      <br/>
+      <input type = "submit" form = "form2" >
+     </form>
+      
+    </div>
+    
+    <!--the start of MK Codes-->
+     <div id="container">
         <ul>
-          <li><a href="index.php">About</a></li>
+        <li><a href="#sectblank">Main</a></li>
         <li><a href="#eucontent">Europe</a></li>
         <li><a href="#ukcontent">United Kingdom</a></li>
         <li><a href="#italycontent">Italy</a></li>
@@ -149,12 +212,12 @@
      data-cycle-fx="fade"
      data-cycle-timeout="5000">
 
-    <img src="images/mkImages/1.jpg" alt=""/>
-    <img src="images/mkImages/3.jpg" alt=""/>
-    <img src="images/mkImages/4.jpg" alt=""/>
-    <img src="images/mkImages/5.jpg" alt=""/>
-    <img src="images/mkImages/6.jpg" alt=""/>
-    <img src="images/mkImages/7.jpg" alt=""/>
+    <img src="images/1.jpg" alt="">
+    <img src="images/3.jpg" alt="">
+    <img src="images/4.jpg" alt="">
+    <img src="images/5.jpg" alt="">
+    <img src="images/6.jpg" alt="">
+    <img src="images/7.jpg" alt="">
 </div>
 </div>
 <div id="pager">
@@ -200,7 +263,7 @@
             <div id="ukcontent">
 
                 <div>
-                    <p>United Kingdom</p>
+                    <p>Unitied Kingdom</p>
                 </div>
                 <p>
                     A political union of Britain, Scotland, Wales and Northern Ireland,
@@ -215,78 +278,6 @@
                     ancient estates.Northern Ireland is a flight (or boat ride) away,
                     however justified regardless of the bother for the magnificence of Belfast.
                 </p>
-							
-							<div id="post_form">
-			<form id = "form1" action = "form.php" method = "POST" >
-				Post:
-				<br/>
-				<textarea rows="4" cols="50" type = "text" name="post_description">Input text Here </textarea>
-				<br/>
-
-			<input type = "submit" form = "form1" />
-
-			</form>
-      
-    <table>
-      
-      <tr>
-        <xsl:for-each select="/destinations/country/name[text()='United Kingdom']">
-            <td><b>Username</b>:<xsl:value-of select = "../post/post_username"/></td>
-        </xsl:for-each>
-      </tr>
-      <tr>
-        <xsl:for-each select="/destinations/country/name[text()='United Kingdom']">
-            <td><b>Post:</b><xsl:value-of select = "../post/post_description"/></td>
-        </xsl:for-each>
-      </tr>
-		</table>      
-    
-    </div>
-   
-    <div id='showPost'></div><br/>
-    <button name = "button">Write Comments</button>    
-    <div id = "comments_form">
-			
-			<table>
-      <tr>
-        <xsl:for-each select="/destinations/country/name[text()='United Kingdom']">
-            <td><b>Username:</b><xsl:value-of select = "../post/comments/comments_username"/></td>      
-        </xsl:for-each>
-      </tr>
-      <tr>
-        <xsl:for-each select="/destinations/country/name[text()='United Kingdom']">          
-            <td><b>Rating:</b><xsl:value-of select = "../post/comments/post_ratings"/></td>            
-        </xsl:for-each>
-      </tr>
-      <tr>
-        <xsl:for-each select="/destinations/country/name[text()='United Kingdom']">
-            <td><b>Comments:</b><xsl:value-of select = "../post/comments/comments"/></td>
-        </xsl:for-each>
-      </tr>
-          
-		</table>
-						
-      <form id = "form2" action = "form2.php" method = "POST" >
-        Rate:
-        <br/>
-        <select name = "ratings" form = "form2">
-          <option value = "1">1</option>
-          <option value = "2">2</option>
-          <option value = "3">3</option>
-          <option value = "4">4</option>
-          <option value = "5">5</option>
-          
-        </select>
-        <br/>
-        
-        Comments:
-        <br/>
-      <textarea rows="4" cols="50" type = "text" name="comments">Input text Here </textarea>
-      <br/>
-      <input type = "submit" form = "form2" />
-     </form>
-      
-    </div>
                 <div id="bubblebox">
                     <div id="bubbles">
                         <div onclick="bubbles(0); clearInterval(intrvl);" style="background:#999;"></div>
@@ -322,84 +313,6 @@
 
                     Sentimental people will discover riding the rising waters of Venice and investigating its renaissance design an overwhelming draw, venturing out of their inn specifically onto a bending longboat. In as much as they stay away from the undeniably regular floods, that is. Florence, and its unlimited columns of red-roofed houses aren't a long ways behind.
                 </p>
-							
-							<div id="post_form">
-			<form id = "form1" action = "form.php" method = "POST" >
-				Post:
-				<br/>
-				<textarea rows="4" cols="50" type = "text" name="post_description">Input text Here </textarea>
-				<br/>
-
-			<input type = "submit" form = "form1" />
-
-			</form>
-      
-    <table>
-      
-      <tr>
-        <xsl:for-each select="/destinations/country/name[text()='Italy']">
-            <td><b>Username</b>:<xsl:value-of select = "../post/post_username"/></td>
-        </xsl:for-each>
-      </tr>
-      <tr>
-        <xsl:for-each select="/destinations/country/name[text()='Italy']">
-            <td><b>Post:</b><xsl:value-of select = "../post/post_description"/></td>
-        </xsl:for-each>
-      </tr>
-		</table>      
-    
-    </div>
-   
-    <div id='showPost'></div><br/>
-    <button name = "button">Write Comments</button>
-   
-      
-    
-    
-    <div id = "comments_form">
-			
-			<table>
-      <tr>
-        <xsl:for-each select="/destinations/country/name[text()='Italy']">
-            <td><b>Username:</b><xsl:value-of select = "../post/comments/comments_username"/></td>      
-        </xsl:for-each>
-      </tr>
-      <tr>
-        <xsl:for-each select="/destinations/country/name[text()='Italy']">          
-            <td><b>Rating:</b><xsl:value-of select = "../post/comments/post_ratings"/></td>            
-        </xsl:for-each>
-      </tr>
-      <tr>
-        <xsl:for-each select="/destinations/country/name[text()='Italy']">
-            <td><b>Comments:</b><xsl:value-of select = "../post/comments/comments"/></td>
-        </xsl:for-each>
-      </tr>
-      
-      
-		</table>
-						
-      <form id = "form2" action = "form2.php" method = "POST" >
-        Rate:
-        <br/>
-        <select name = "ratings" form = "form2">
-          <option value = "1">1</option>
-          <option value = "2">2</option>
-          <option value = "3">3</option>
-          <option value = "4">4</option>
-          <option value = "5">5</option>
-          
-        </select>
-        <br/>
-        
-        Comments:
-        <br/>
-      <textarea rows="4" cols="50" type = "text" name="comments">Input text Here </textarea>
-      <br/>
-      <input type = "submit" form = "form2" />
-     </form>
-      
-    </div>
-							
             </article>
 
         </div>
@@ -444,82 +357,6 @@
                     Paris doesn't disillusion for sure, with the greatness of the Seine (and it's scandalously partitioned east and west banks), the class of Notre Lady and the sentiment of nightfall over the Eiffel Tower. Best of all, it's not only the locales that are captivating.
 
                 </p>
-							<div id="post_form">
-			<form id = "form1" action = "form.php" method = "POST" >
-				Post:
-				<br/>
-				<textarea rows="4" cols="50" type = "text" name="post_description">Input text Here </textarea>
-				<br/>
-
-			<input type = "submit" form = "form1" />
-
-			</form>
-      
-    <table>
-      
-      <tr>
-        <xsl:for-each select="/destinations/country/name[text()='France']">
-            <td><b>Username</b>:<xsl:value-of select = "../post/post_username"/></td>
-        </xsl:for-each>
-      </tr>
-      <tr>
-        <xsl:for-each select="/destinations/country/name[text()='France']">
-            <td><b>Post:</b><xsl:value-of select = "../post/post_description"/></td>
-        </xsl:for-each>
-      </tr>
-		</table>      
-    
-    </div>
-   
-    <div id='showPost'></div><br/>
-    <button name = "button">Write Comments</button>
-   
-      
-    
-    
-    <div id = "comments_form">
-			
-			<table>
-      <tr>
-        <xsl:for-each select="/destinations/country/name[text()='France']">
-            <td><b>Username:</b><xsl:value-of select = "../post/comments/comments_username"/></td>      
-        </xsl:for-each>
-      </tr>
-      <tr>
-        <xsl:for-each select="/destinations/country/name[text()='France']">          
-            <td><b>Rating:</b><xsl:value-of select = "../post/comments/post_ratings"/></td>            
-        </xsl:for-each>
-      </tr>
-      <tr>
-        <xsl:for-each select="/destinations/country/name[text()='France']">
-            <td><b>Comments:</b><xsl:value-of select = "../post/comments/comments"/></td>
-        </xsl:for-each>
-      </tr>
-      
-      
-		</table>
-						
-      <form id = "form2" action = "form2.php" method = "POST" >
-        Rate:
-        <br/>
-        <select name = "ratings" form = "form2">
-          <option value = "1">1</option>
-          <option value = "2">2</option>
-          <option value = "3">3</option>
-          <option value = "4">4</option>
-          <option value = "5">5</option>
-          
-        </select>
-        <br/>
-        
-        Comments:
-        <br/>
-      <textarea rows="4" cols="50" type = "text" name="comments">Input text Here </textarea>
-      <br/>
-      <input type = "submit" form = "form2" />
-     </form>
-      
-    </div>
 
                 <div class="city">
                         <h2>Paris</h2>
@@ -695,13 +532,12 @@
 
 
 <footer class="mainFooter">
-    <p>Copyright: BonVoyagers</p>
+    <p>Copyright stuff or whatever</p>
 </footer>
-</body>
-
+    <!--end of MK codes -->
+  </body>
+  
+  
 </html>
 
 
-    
-  </xsl:template>
-</xsl:transform>
